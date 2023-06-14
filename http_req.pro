@@ -45,10 +45,10 @@ symbian {
 
 # Other Files
 OTHER_FILES += \
-    debian_harmattan/rules \
-    debian_harmattan/README \
-    debian_harmattan/manifest.aegis \
-    debian_harmattan/copyright \
-    debian_harmattan/control \
-    debian_harmattan/compat \
-    debian_harmattan/changelog
+    qtc_packaging/debian_harmattan/rules \
+    qtc_packaging/debian_harmattan/README \
+    qtc_packaging/debian_harmattan/manifest.aegis \
+    qtc_packaging/debian_harmattan/copyright \
+    qtc_packaging/debian_harmattan/control \
+    qtc_packaging/debian_harmattan/compat \
+    qtc_packaging/debian_harmattan/changelog
