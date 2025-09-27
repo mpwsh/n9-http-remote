@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = http_req
+TARGET = http-req
 QT += network
 
 CONFIG += qt quick qml
@@ -17,22 +17,30 @@ DESTDIR = build/
 SOURCES += \
     src/main.cpp \
     src/networkmanager.cpp \
-    src/buttonmanager.cpp
+    src/buttonmanager.cpp \
+    src/responseviewer.cpp \
+    src/recentfiles.cpp
 
 HEADERS += \
     src/networkmanager.h \
-    src/buttonmanager.h
+    src/buttonmanager.h \
+    src/responseviewer.h \
+    src/recentfiles.h
 
 # Additional import path used to resolve QML modules in Creators code model
-QML_IMPORT_PATH = src/qml
+QML_IMPORT_PATH = qml/http-req
 
 # Add more folders to ship with the application, here
-folder_01.source = src/qml/http_req
+folder_01.source = qml/http-req
 folder_01.target = qml
 DEPLOYMENTFOLDERS = folder_01
 
+iconfolder.source = assets
+iconfolder.target = /usr/share/icons/hicolor/80x80/apps
+DEPLOYMENTFOLDERS += iconfolder
+
 # Include the QML Application Viewer
-include(src/qmlapplicationviewer/qmlapplicationviewer.pri)
+include(qmlapplicationviewer/qmlapplicationviewer.pri)
 
 # Add deployment rules (required for deployment)
 qtcAddDeployment()

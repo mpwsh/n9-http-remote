@@ -28,10 +28,10 @@ void NetworkManager::makeRequest(const QString &url)
     }
 
     m_ongoingRequest = true;
-
     QNetworkRequest request;
     request.setUrl(QUrl(url));
     m_networkAccessManager.get(request);
+    emit requestStarted();
 }
 
 void NetworkManager::onFinished(QNetworkReply *reply)
@@ -47,6 +47,7 @@ void NetworkManager::onFinished(QNetworkReply *reply)
         qDebug() << "Network request error: " << reply->errorString();
     }
     reply->deleteLater();
+    emit requestFinished();
 }
 
 

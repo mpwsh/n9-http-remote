@@ -22,6 +22,8 @@ public:
 
 signals:
     void dataChanged();
+    void requestStarted();
+    void requestFinished();
     void requestSuccess();
 
 private slots:
